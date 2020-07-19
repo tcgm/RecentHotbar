@@ -11,5 +11,11 @@ data:extend({
         name = "do-items-in-hotbar",
         setting_type = "runtime-per-user",
         default_value = false
+    },
+    {
+        type = "bool-setting",
+        name = "sort-rl",
+        setting_type = "runtime-per-user",
+        default_value = false
     }
 })
