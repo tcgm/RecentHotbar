@@ -19,7 +19,13 @@ function scroll(event)
 		do end
 		
 		else
-			for num=0,8 do
+			local fin_slot = nil
+			for slot=2,10 do
+				if player.get_quick_bar_slot(slot) == nil and fin_slot == nil then
+					fin_slot = slot
+				end
+			end
+			for num=fin_slot,8 do
 				player.set_quick_bar_slot(10 - num, player.get_quick_bar_slot(9 - num))
 			end
 			player.set_quick_bar_slot(1, player.cursor_stack.name)
