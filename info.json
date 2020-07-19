@@ -1,0 +1,9 @@
+{
+    "name": "RecentHotbar",
+    "version": "0.1.0",
+    "title": "RecentHotbar",
+    "author": "TechFish3000",
+    "factorio_version": "0.18",
+    "dependencies": ["base >= 0.18"],
+    "description": "Scrolls the hotbar with things you recently used"
+  }
