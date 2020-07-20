@@ -15,7 +15,8 @@ function scroll(event)
 		log(player.cursor_stack.count)
 		local do_items = settings.get_player_settings(player)["do-items-in-hotbar"].value
 		local working_hotbar = (settings.get_player_settings(player)["working-hotbar"].value * 10) - 10
-		if player.get_quick_bar_slot(1 + working_hotbar) == player.cursor_stack.prototype or (player.cursor_stack.prototype.place_result == nil and do_items == false) then
+		local right_left = settings.get_player_settings(player)["sort-rl"].value
+                if player.get_quick_bar_slot(1 + working_hotbar) == player.cursor_stack.prototype or (player.cursor_stack.prototype.place_result == nil and do_items == false) then
 		do end
 		
 		else
@@ -27,7 +28,15 @@ function scroll(event)
 				end
 			end
 			if fin_slot == nil then fin_slot = 0 end
+                        local lr = nil
+                        local rl = nil
+                        local fin = nil 
 			for num=fin_slot,8 do
+                            lr = 10 - num
+                            rl = num
+                            if right_left then 
+
+
 				player.set_quick_bar_slot((10 - num) + working_hotbar, player.get_quick_bar_slot((9 - num) + working_hotbar))
 			end
 			player.set_quick_bar_slot(1 + working_hotbar, player.cursor_stack.name)
