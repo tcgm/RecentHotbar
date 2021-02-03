@@ -1,5 +1,11 @@
 data:extend({
     {
+        type = "bool-setting",
+        name = "enable-mod",
+        setting_type = "runtime-per-user",
+        default_value = true
+    },
+    {
         type = "int-setting",
         name = "working-hotbar",
         setting_type = "runtime-per-user",
