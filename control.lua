@@ -55,6 +55,13 @@ function scroll(event)
 			--end 
 		end
 		
+		if selected == nil and left_right then
+			selected = 10
+		
+		elseif selected == nil and right_left then
+			selected = 1
+		
+		end
 		if left_right then
 			startIndex = selected
 			endIndex = 2
